@@ -1,6 +1,4 @@
-# aikon
-
-> A celebrity video snap platform
+# ComGo Ecosystem Mock
 
 ## Build Setup
 
