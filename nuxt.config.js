@@ -10,10 +10,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
-        name: "The Common Good Chain",
+        name: 'The Common Good Chain',
         content: 'The ecosystem.',
-        keywords:
-          'blockchain, charity'
+        keywords: 'blockchain, charity'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
