@@ -8,7 +8,7 @@
       </div> -->
       <div class="container">
         <!-- <user-card></user-card> -->
-        <filters-menu></filters-menu>
+        <filters-menu @filters-change="onChange"></filters-menu>
         <recommendations></recommendations>
         <events></events>
         <div class="container">
@@ -38,6 +38,11 @@ export default {
     FiltersMenu,
     Recommendations,
     Events
+  },
+  methods: {
+    onChange: function(data) {
+      this.$emit('filters-change', data)
+    }
   }
 }
 </script>

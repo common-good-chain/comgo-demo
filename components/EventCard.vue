@@ -40,7 +40,9 @@
     <footer class="card-footer">
       <div class="card-footer-item">🔔 {{ data.when }}</div>
       <div class="card-footer-item">
-        <b-button type="is-primary"> ✏️ Sign up </b-button>
+        <b-button type="is-primary" @click="displayError()">
+          ✏️ Sign up
+        </b-button>
       </div>
     </footer>
   </div>
@@ -71,6 +73,16 @@ img.border-hack {
 
 <script>
 export default {
-  props: ['data']
+  props: ['data'],
+  methods: {
+    displayError: function() {
+      this.$buefy.toast.open({
+        duration: 1500,
+        message: `Ooops. This is not yet implemented`,
+        position: 'is-top',
+        type: 'is-warning'
+      })
+    }
+  }
 }
 </script>

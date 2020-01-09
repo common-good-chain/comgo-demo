@@ -180,7 +180,7 @@ export default {
       this.loading = true
       if (!this.isFormValid) {
         this.$buefy.toast.open({
-          duration: 3000,
+          duration: 1500,
           message: `Revisa que todos los campos están completados adecuadamente`,
           position: 'is-top',
           type: 'is-danger'
@@ -197,7 +197,7 @@ export default {
           nFollowers: this.formValidation.fields.nFollowers
         })
         this.$buefy.toast.open({
-          duration: 3000,
+          duration: 1500,
           message: `Todo bien!`,
           position: 'is-top',
           type: 'is-success'
@@ -210,7 +210,7 @@ export default {
       } catch (err) {
         this.loading = false
         this.$buefy.toast.open({
-          duration: 3000,
+          duration: 1500,
           message: `Ha ocurrido un error. Por favor inténtalo más tarde.`,
           position: 'is-top',
           type: 'is-danger'

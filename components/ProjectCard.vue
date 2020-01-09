@@ -64,7 +64,9 @@
     <footer class="card-footer">
       <div class="card-footer-item">🕐 {{ data.deadline }} days left</div>
       <div class="card-footer-item">
-        <b-button type="is-primary"> 🤲 Donate </b-button>
+        <b-button type="is-primary" @click="displayError()">
+          🤲 Donate
+        </b-button>
       </div>
     </footer>
   </div>
@@ -98,8 +100,17 @@ export default {
   props: ['data'],
   computed: {
     percentLeft: function() {
-      console.log(this.data)
       return Math.round((this.data.coveredNum / this.data.goalNum) * 100)
+    }
+  },
+  methods: {
+    displayError: function() {
+      this.$buefy.toast.open({
+        duration: 1500,
+        message: `Ooops. This is not yet implemented`,
+        position: 'is-top',
+        type: 'is-warning'
+      })
     }
   }
 }

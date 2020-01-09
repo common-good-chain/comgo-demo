@@ -3,45 +3,52 @@
     <div class="card-content">
       <b-menu>
         <b-menu-list label="Menu">
-          <b-menu-item icon="information-outline" label="Info"></b-menu-item>
+          <b-menu-item
+            icon="account"
+            label="My Account"
+            @click="displayError()"
+          ></b-menu-item>
           <b-menu-item
             icon="settings"
             :active="isActive"
             :expanded="isActive"
-            @click="isActive = !isActive"
+            @click="
+              isActive = !isActive
+              displayError()
+            "
           >
             <template slot="label" slot-scope="props">
-              Administrator
+              Projects
               <b-icon
                 class="is-pulled-right"
                 :icon="props.expanded ? 'menu-down' : 'menu-up'"
               >
               </b-icon>
             </template>
-            <b-menu-item icon="account" label="Users"></b-menu-item>
+            <b-menu-item
+              icon="account"
+              label="Published"
+              @click="displayError()"
+            ></b-menu-item>
             <b-menu-item
               icon="cash-multiple"
-              label="Payments"
+              label="Collaborating"
               disabled
             ></b-menu-item>
-          </b-menu-item>
-          <b-menu-item icon="account" label="My Account">
-            <b-menu-item label="Account data"></b-menu-item>
-            <b-menu-item label="Addresses"></b-menu-item>
           </b-menu-item>
         </b-menu-list>
         <b-menu-list>
           <b-menu-item
-            label="Expo"
-            icon="link"
+            label="My Wallet"
+            icon="credit-card"
             tag="router-link"
-            target="_blank"
-            to="/expo"
+            to="/"
+            @click="displayError()"
           >
           </b-menu-item>
         </b-menu-list>
         <b-menu-list label="Actions">
-          <b-menu-item label="Logout"></b-menu-item>
+          <b-menu-item label="Logout" @click="displayError()"></b-menu-item>
         </b-menu-list>
       </b-menu>
     </div>
@@ -53,6 +60,16 @@ export default {
   data() {
     return {
       isActive: false
+    }
+  },
+  methods: {
+    displayError: function() {
+      this.$buefy.toast.open({
+        duration: 1500,
+        message: `Ooops. This is not yet implemented`,
+        position: 'is-top',
+        type: 'is-warning'
+      })
     }
   }
 }

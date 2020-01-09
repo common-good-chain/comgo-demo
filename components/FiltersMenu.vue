@@ -7,22 +7,22 @@
         </div>
         <div class="media filters-container">
           <div class="field">
-            <b-checkbox v-model="showNews">
+            <b-checkbox v-model="filtersState.showNews" @input="onChange">
               🚨 News
             </b-checkbox>
           </div>
           <div class="field">
-            <b-checkbox v-model="showEvents">
+            <b-checkbox v-model="filtersState.showEvents" @input="onChange">
               📅 Events
             </b-checkbox>
           </div>
           <div class="field">
-            <b-checkbox v-model="showProjects">
+            <b-checkbox v-model="filtersState.showProjects" @input="onChange">
               🤲 Projects
             </b-checkbox>
           </div>
           <div class="field">
-            <b-checkbox v-model="showUpdates">
+            <b-checkbox v-model="filtersState.showUpdates" @input="onChange">
               🔔 Updates
             </b-checkbox>
           </div>
@@ -50,10 +50,17 @@
 export default {
   data() {
     return {
-      showNews: true,
-      showEvents: true,
-      showProjects: true,
-      showUpdates: true
+      filtersState: {
+        showNews: true,
+        showEvents: true,
+        showProjects: true,
+        showUpdates: true
+      }
+    }
+  },
+  methods: {
+    onChange: function(event) {
+      this.$emit('filters-change', this.filtersState)
     }
   }
 }

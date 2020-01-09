@@ -10,7 +10,7 @@
         <div v-else class="columns">
           <left-column></left-column>
           <feed-items :items="filteredItems"></feed-items>
-          <right-column></right-column>
+          <right-column @filters-change="onChangeFilters"></right-column>
         </div>
       </div>
     </div>
@@ -50,7 +50,13 @@ export default {
       allTalents: [],
       orderedTalentsToShow: [],
       allItems: [],
-      filteredItems: []
+      filteredItems: [],
+      filterKeys: {
+        showNews: 'NEWS',
+        showEvents: 'EVENT',
+        showProjects: 'PROJECT',
+        showUpdates: 'UPDATE'
+      }
     }
   },
   computed: {
@@ -71,24 +77,20 @@ export default {
       this.filteredItems = this.allItems
       setTimeout(() => (this.loading = false), 1000)
     },
-    orderTalentsBy: function(talents, value) {
-      switch (value) {
-        case 'createdAt':
-          return _.reverse(_.sortBy(talents, 'createdAt'))
-        case 'pricePersonalVideoLow':
-          return _.sortBy(talents, 'pricePersonalVideo')
-        case 'pricePersonalVideoHigh':
-          return _.reverse(_.sortBy(talents, 'pricePersonalVideo'))
-        default:
-          return _.reverse(_.sortBy(talents, 'createdAt'))
-      }
-    },
-    onChangeSortBy: function(value) {
-      this.$store.commit('talents/changeSortMethod', value)
-      this.orderedTalentsToShow = this.orderTalentsBy(
-        this.orderedTalentsToShow,
-        this.sortTalentsBy
-      )
+    onChangeFilters: function(data) {
+      const filterKeys = this.filterKeys
+      const allItems = this.allItems
+      const keys = Object.keys(data)
+      const activeFilters = keys.filter(function(key) {
+        return data[key]
+      })
+      const activeKeys = _.map(activeFilters, function(filter) {
+        return filterKeys[filter]
+      })
+      const items = _.filter(allItems, function(item) {
+        return _.includes(activeKeys, item.type)
+      })
+      this.filteredItems = items
     }
   }
 }

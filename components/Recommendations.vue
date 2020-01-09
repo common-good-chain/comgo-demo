@@ -27,7 +27,9 @@
               <p class="subtitle is-7">{{ data.info }}</p>
             </div>
             <div class="right-content">
-              <b-button type="is-primary is-small">Follow</b-button>
+              <b-button type="is-primary is-small" @click="displayError()"
+                >Follow</b-button
+              >
             </div>
           </div>
         </div>
@@ -76,6 +78,16 @@ export default {
           imgSrc: 'https://bulma.io/images/placeholders/96x96.png'
         }
       ]
+    }
+  },
+  methods: {
+    displayError: function() {
+      this.$buefy.toast.open({
+        duration: 1500,
+        message: `Ooops. This is not yet implemented`,
+        position: 'is-top',
+        type: 'is-warning'
+      })
     }
   }
 }

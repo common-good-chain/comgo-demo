@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     onSuggestSelect: function(data) {
-      this.$router.push({ name: 'talents-id', params: { id: data.id } })
+      this.displayError()
     },
     boldenSuggestion(scope, element) {
       if (!scope) return scope
@@ -94,6 +94,14 @@ export default {
         new RegExp('(.*?)(' + texts.join('|') + ')(.*?)', 'gi'),
         '$1<b>$2</b>$3'
       )
+    },
+    displayError: function() {
+      this.$buefy.toast.open({
+        duration: 1500,
+        message: `Ooops. This is not yet implemented`,
+        position: 'is-top',
+        type: 'is-warning'
+      })
     }
   }
 }
