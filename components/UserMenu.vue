@@ -39,10 +39,20 @@
         </b-menu-list>
         <b-menu-list>
           <b-menu-item
+            v-if="['feed'].includes($route.name)"
             label="My Wallet"
             icon="credit-card"
             tag="router-link"
-            to="/"
+            :to="{ name: 'wallet' }"
+            @click="displayError()"
+          >
+          </b-menu-item>
+          <b-menu-item
+            v-if="['wallet'].includes($route.name)"
+            label="My Feed"
+            icon="rss"
+            tag="router-link"
+            :to="{ name: 'feed' }"
             @click="displayError()"
           >
           </b-menu-item>
