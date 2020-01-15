@@ -3,6 +3,26 @@
     <div class="card-content">
       <b-menu>
         <b-menu-list label="Menu">
+          <b-menu-list>
+            <b-menu-item
+              v-if="['feed'].includes($route.name)"
+              label="My Wallet"
+              icon="credit-card"
+              tag="router-link"
+              :to="{ name: 'wallet' }"
+              @click="displayError()"
+            >
+            </b-menu-item>
+            <b-menu-item
+              v-if="['wallet'].includes($route.name)"
+              label="My Feed"
+              icon="rss"
+              tag="router-link"
+              :to="{ name: 'feed' }"
+              @click="displayError()"
+            >
+            </b-menu-item>
+          </b-menu-list>
           <b-menu-item
             icon="account"
             label="My Account"
@@ -12,10 +32,7 @@
             icon="settings"
             :active="isActive"
             :expanded="isActive"
-            @click="
-              isActive = !isActive
-              displayError()
-            "
+            @click="isActive = !isActive"
           >
             <template slot="label" slot-scope="props">
               Projects
@@ -35,26 +52,6 @@
               label="Collaborating"
               disabled
             ></b-menu-item>
-          </b-menu-item>
-        </b-menu-list>
-        <b-menu-list>
-          <b-menu-item
-            v-if="['feed'].includes($route.name)"
-            label="My Wallet"
-            icon="credit-card"
-            tag="router-link"
-            :to="{ name: 'wallet' }"
-            @click="displayError()"
-          >
-          </b-menu-item>
-          <b-menu-item
-            v-if="['wallet'].includes($route.name)"
-            label="My Feed"
-            icon="rss"
-            tag="router-link"
-            :to="{ name: 'feed' }"
-            @click="displayError()"
-          >
           </b-menu-item>
         </b-menu-list>
         <b-menu-list label="Actions">

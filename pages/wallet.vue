@@ -5,11 +5,16 @@
     <br />
     <div class="section">
       <div class="container">
+        <b-modal :active.sync="isTransferModalActive" has-modal-card>
+          <transfer-modal></transfer-modal>
+        </b-modal>
         <b-loading :is-full-page="true" :active.sync="loading"></b-loading>
         <div v-if="loading" class="columns" style="height: 70vh;"></div>
         <div v-else class="columns">
           <left-column></left-column>
-          <wallet-container></wallet-container>
+          <wallet-container
+            @openModal="onOpenTransferModal()"
+          ></wallet-container>
         </div>
       </div>
     </div>
@@ -26,6 +31,7 @@
 import Navbar from '~/components/Navbar'
 import LeftColumn from '~/components/LeftColumn'
 import WalletContainer from '~/components/WalletContainer'
+import TransferModal from '~/components/modals/TransferModal'
 
 import _ from 'lodash'
 import feedItems from '~/static/feedItems.js'
@@ -34,7 +40,8 @@ export default {
   components: {
     Navbar,
     LeftColumn,
-    WalletContainer
+    WalletContainer,
+    TransferModal
   },
   data() {
     return {
@@ -53,7 +60,8 @@ export default {
         showEvents: 'EVENT',
         showProjects: 'PROJECT',
         showUpdates: 'UPDATE'
-      }
+      },
+      isTransferModalActive: false
     }
   },
   computed: {
@@ -88,6 +96,9 @@ export default {
         return _.includes(activeKeys, item.type)
       })
       this.filteredItems = items
+    },
+    onOpenTransferModal: function() {
+      this.isTransferModalActive = true
     }
   }
 }
