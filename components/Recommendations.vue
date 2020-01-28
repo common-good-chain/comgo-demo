@@ -63,19 +63,21 @@ export default {
     return {
       recommendations: [
         {
-          name: 'My NGO',
-          info: 'Cool story',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png'
+          name: 'Comun. de M...',
+          info: 'Institution',
+          imgSrc:
+            'https://pbs.twimg.com/profile_images/1185678375647662080/-sj0LOtW_400x400.png'
         },
         {
-          name: 'Social Enter...',
-          info: 'Cool story',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png'
+          name: 'ACH Spain',
+          info: 'NGO',
+          imgSrc:
+            'https://assets.funraise.io/widget/client/e903bf1c-1df2-4a95-a37c-61a636c7e863/3237/1.3/6d6d61bd3be7522da5756fdcad35e539d378d890.png'
         },
         {
-          name: 'Foundation',
-          info: 'Cool story',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png'
+          name: 'ComGo',
+          info: 'Tech NGO',
+          imgSrc: 'https://comgo.io/_nuxt/img/logo.897afa0.png'
         }
       ]
     }

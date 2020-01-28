@@ -62,27 +62,30 @@ export default {
     return {
       events: [
         {
-          name: 'My NGOs',
-          info: 'Gift giving',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png',
+          name: 'UNTIL Tech...',
+          info: 'Innovation talk',
+          imgSrc:
+            'https://until.un.org/sites/all/themes/custom/until/app-assets/images/until-logo.svg',
           when: 'Today'
         },
         {
-          name: 'Social Enter...',
-          info: 'Carol singing',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png',
+          name: 'Comun. de M...',
+          info: 'Homeless ...',
+          imgSrc:
+            'https://pbs.twimg.com/profile_images/1185678375647662080/-sj0LOtW_400x400.png',
           when: '7d'
         },
         {
-          name: 'Foundation',
+          name: 'ACH Spain',
           info: 'Fundraiser',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png',
+          imgSrc:
+            'https://assets.funraise.io/widget/client/e903bf1c-1df2-4a95-a37c-61a636c7e863/3237/1.3/6d6d61bd3be7522da5756fdcad35e539d378d890.png',
           when: '2w'
         },
         {
-          name: 'Foundation 2',
+          name: 'ComGo',
           info: 'Fundraiser',
-          imgSrc: 'https://bulma.io/images/placeholders/96x96.png',
+          imgSrc: 'https://comgo.io/_nuxt/img/logo.897afa0.png',
           when: '3w'
         }
       ]

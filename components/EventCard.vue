@@ -16,7 +16,11 @@
     </header>
     <div v-if="data.imgSrc" class="card-image">
       <figure class="image is-4by3">
-        <img :src="data.imgSrc" alt="Placeholder image" />
+        <img
+          class="aspect-ratio-hack"
+          :src="data.imgSrc"
+          alt="Placeholder image"
+        />
       </figure>
     </div>
     <div class="card-content">
