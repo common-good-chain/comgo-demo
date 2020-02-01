@@ -5,7 +5,7 @@
         <b-menu-list label="Menu">
           <b-menu-list>
             <b-menu-item
-              v-if="['feed'].includes($route.name)"
+              v-if="!['wallet'].includes($route.name)"
               label="My Wallet"
               icon="credit-card"
               tag="router-link"
@@ -14,45 +14,21 @@
             >
             </b-menu-item>
             <b-menu-item
-              v-if="['wallet'].includes($route.name)"
+              v-if="!['feed'].includes($route.name)"
               label="My Feed"
               icon="rss"
               tag="router-link"
               :to="{ name: 'feed' }"
-              @click="displayError()"
             >
             </b-menu-item>
           </b-menu-list>
           <b-menu-item
+            v-if="!['impact'].includes($route.name)"
             icon="account"
-            label="My Account"
-            @click="displayError()"
+            label="My Impact"
+            tag="router-link"
+            :to="{ name: 'impact' }"
           ></b-menu-item>
-          <b-menu-item
-            icon="settings"
-            :active="isActive"
-            :expanded="isActive"
-            @click="isActive = !isActive"
-          >
-            <template slot="label" slot-scope="props">
-              Projects
-              <b-icon
-                class="is-pulled-right"
-                :icon="props.expanded ? 'menu-down' : 'menu-up'"
-              >
-              </b-icon>
-            </template>
-            <b-menu-item
-              icon="account"
-              label="Published"
-              @click="displayError()"
-            ></b-menu-item>
-            <b-menu-item
-              icon="cash-multiple"
-              label="Collaborating"
-              disabled
-            ></b-menu-item>
-          </b-menu-item>
         </b-menu-list>
         <b-menu-list label="Actions">
           <b-menu-item label="Logout" @click="displayError()"></b-menu-item>
