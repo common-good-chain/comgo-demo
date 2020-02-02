@@ -70,14 +70,62 @@
           </b-tab-item>
 
           <b-tab-item label="Your impact">
-            [TODO]
+            <div class="container content">
+              <p class="title is-4">Output</p>
+              <div class="columns has-text-centered is-multiline is-mobile">
+                <div class="column is-4-desktop">
+                  <div class="card kpi-container">
+                    <div class="card-content">
+                      <p class="has-text-grey">🤲Initiatives supported</p>
+                      <p class="is-size-2">
+                        12
+                      </p>
+                      <p class="has-text-grey is-size-7">initiatives</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-4-desktop">
+                  <div class="card kpi-container">
+                    <div class="card-content">
+                      <p class="has-text-grey">👨‍👩‍👦‍👦People reached</p>
+                      <p class="is-size-2">12.5k</p>
+                      <p class="has-text-grey is-size-7">people</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-4-desktop">
+                  <div class="card kpi-container">
+                    <div class="card-content">
+                      <p class="has-text-grey">📊Social Return on Investment</p>
+                      <p class="is-size-2">
+                        0.456
+                      </p>
+                      <p class="has-text-grey is-size-7"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="container content">
+              <p class="title is-4">Impact demographics</p>
+              <div class="columns">
+                <div class="column is-5-desktop">
+                  <chart :type="'doughnut'" :data="demoChart"></chart>
+                </div>
+                <div class="column is-6-desktop">
+                  <figure class="image map-img">
+                    <img
+                      src="../static/images/map.png"
+                      style="border-radius: 0.75rem;"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
           </b-tab-item>
 
-          <b-tab-item label="Reports" disabled>
-            Nunc nec velit nec libero vestibulum eleifend. Curabitur pulvinar
-            congue luctus. Nullam hendrerit iaculis augue vitae ornare. Maecenas
-            vehicula pulvinar tellus, id sodales felis lobortis eget.
-          </b-tab-item>
+          <b-tab-item label="Reports" disabled> </b-tab-item>
         </b-tabs>
       </section>
     </div>
@@ -108,6 +156,13 @@
   display: flex;
   justify-content: center;
 }
+.map-img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .card {
   border-radius: 5px;
   margin-bottom: 1.5rem;
@@ -125,12 +180,7 @@
 </style>
 
 <script>
-import Chart from 'vue-bulma-chartjs'
-
 export default {
-  components: {
-    Chart
-  },
   data() {
     return {
       isTransferModalActive: false,
@@ -164,6 +214,21 @@ export default {
             ]
           }
         }
+      },
+      demoChart: {
+        labels: [
+          'Children',
+          'Men and women (18-45)',
+          'Men and women (>45)',
+          'Youth'
+        ],
+        datasets: [
+          {
+            label: '',
+            data: [150, 40, 10, 20],
+            backgroundColor: ['#ed6c63', '#fce473', '#42afe3', '#006400']
+          }
+        ]
       }
     }
   },
