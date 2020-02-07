@@ -68,7 +68,15 @@
     <footer class="card-footer">
       <div class="card-footer-item">🕐 {{ data.deadline }} days left</div>
       <div class="card-footer-item">
-        <b-button type="is-primary" @click="displayError()">
+        <b-button
+          type="is-primary"
+          tag="a"
+          target="_blank"
+          :href="
+            'https://test.comgo.io/pages/projectProfile?projectId=' +
+              data.projectId
+          "
+        >
           🤲 Donate
         </b-button>
       </div>

@@ -45,6 +45,7 @@ export default {
     {
       id: 4,
       type: 'PROJECT',
+      projectId: 'Project1565778624959',
       poster: {
         name: 'ACH',
         info: 'Action Against Hunger Spain',
@@ -67,6 +68,7 @@ export default {
     },
     {
       id: 4,
+      projectId: 'Project1565778624959',
       type: 'UPDATE',
       poster: {
         name: 'Cáritas',
