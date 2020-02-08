@@ -3,8 +3,9 @@
     <header class="card-header">
       <div class="header-content">
         <div class="poster-details">
-          🎁<span class="has-text-weight-bold"
-            >Get a <b>{{ data.product }}</b> by {{ data.poster.name }}</span
+          🎁<span
+            >Get a <b>{{ data.product }}</b> by
+            <b>{{ data.poster.name }}</b></span
           >
         </div>
         <div class="right-content">
