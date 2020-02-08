@@ -69,6 +69,7 @@
       <div class="card-footer-item">🕐 {{ data.deadline }} days left</div>
       <div class="card-footer-item">
         <b-button
+          v-if="data.projectId"
           type="is-primary"
           tag="a"
           target="_blank"
@@ -77,6 +78,9 @@
               data.projectId
           "
         >
+          🤲 Donate
+        </b-button>
+        <b-button v-else type="is-primary" @click="displayError()">
           🤲 Donate
         </b-button>
       </div>

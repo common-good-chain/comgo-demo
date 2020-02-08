@@ -26,6 +26,11 @@
               🔔 Updates
             </b-checkbox>
           </div>
+          <div class="field">
+            <b-checkbox v-model="filtersState.showProducts" @input="onChange">
+              🎁 Fair Trade
+            </b-checkbox>
+          </div>
         </div>
       </div>
     </div>
@@ -54,7 +59,8 @@ export default {
         showNews: true,
         showEvents: true,
         showProjects: true,
-        showUpdates: true
+        showUpdates: true,
+        showProducts: true
       }
     }
   },

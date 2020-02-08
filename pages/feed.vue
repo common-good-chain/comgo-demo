@@ -55,7 +55,8 @@ export default {
         showNews: 'NEWS',
         showEvents: 'EVENT',
         showProjects: 'PROJECT',
-        showUpdates: 'UPDATE'
+        showUpdates: 'UPDATE',
+        showProducts: 'PRODUCT'
       }
     }
   },

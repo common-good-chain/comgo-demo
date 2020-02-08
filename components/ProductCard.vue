@@ -3,8 +3,9 @@
     <header class="card-header">
       <div class="header-content">
         <div class="poster-details">
-          🔔<span class="has-text-weight-bold">{{ data.poster.name }}</span> has
-          posted an <b>update</b>
+          🎁<span class="has-text-weight-bold"
+            >Get a <b>{{ data.product }}</b> by {{ data.poster.name }}</span
+          >
         </div>
         <div class="right-content">
           <p class="subtitle is-7">
@@ -40,48 +41,12 @@
         </div>
       </div>
       <div class="content" v-html="data.content"></div>
-      <div class="progress-container">
-        <div class="level">
-          <div class="level-item level-left is-5">
-            <div>
-              <p class="heading">Backers</p>
-              <p class="title is-6">{{ data.backers }}</p>
-            </div>
-          </div>
-          <div class="level-item level-right">
-            <div>
-              <p class="heading">Raised</p>
-              <p>
-                <span class="title is-6">{{ data.covered }}</span
-                ><span class="subtitle is-7"> of {{ data.goal }}€ goal</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <b-progress type="is-primary" :value="percentLeft" show-value
-          ><b-tooltip :label="percentLeft + '% left'" type="is-dark"
-            >{{ data.covered }}€ of {{ data.goal }}€
-          </b-tooltip></b-progress
-        >
-      </div>
     </div>
     <footer class="card-footer">
-      <div class="card-footer-item">🕐 {{ data.deadline }} days left</div>
+      <div class="card-footer-item">💰{{ data.price }}{{ data.unit }}</div>
       <div class="card-footer-item">
-        <b-button
-          v-if="data.projectId"
-          type="is-primary"
-          tag="a"
-          target="_blank"
-          :href="
-            'https://test.comgo.io/pages/projectProfile?projectId=' +
-              data.projectId
-          "
-        >
-          🤲 Donate
-        </b-button>
-        <b-button v-else type="is-primary" @click="displayError()">
-          🤲 Donate
+        <b-button type="is-primary" @click="displayError()">
+          Buy Now
         </b-button>
       </div>
     </footer>
@@ -114,11 +79,6 @@ img.border-hack {
 <script>
 export default {
   props: ['data'],
-  computed: {
-    percentLeft: function() {
-      return Math.round((this.data.coveredNum / this.data.goalNum) * 100)
-    }
-  },
   methods: {
     displayError: function() {
       this.$buefy.toast.open({

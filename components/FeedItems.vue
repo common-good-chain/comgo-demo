@@ -6,6 +6,7 @@
         <event-card v-if="data.type == 'EVENT'" :data="data"></event-card>
         <project-card v-if="data.type == 'PROJECT'" :data="data"></project-card>
         <update-card v-if="data.type == 'UPDATE'" :data="data"></update-card>
+        <product-card v-if="data.type == 'PRODUCT'" :data="data"></product-card>
       </div>
     </div>
     <div v-else class="box empty-state-box has-text-centered">
@@ -28,13 +29,15 @@ import NewsCard from '~/components/NewsCard'
 import EventCard from '~/components/EventCard'
 import ProjectCard from '~/components/ProjectCard'
 import UpdateCard from '~/components/UpdateCard'
+import ProductCard from '~/components/ProductCard'
 
 export default {
   components: {
     NewsCard,
     EventCard,
     ProjectCard,
-    UpdateCard
+    UpdateCard,
+    ProductCard
   },
   props: ['items', 'sortTalentsBy']
 }

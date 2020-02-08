@@ -16,6 +16,30 @@ export default {
     },
     {
       id: 2,
+      type: 'PROJECT',
+      projectId: 'Project1581156418542',
+      poster: {
+        name: 'ACH',
+        info: 'Action Against Hunger Spain',
+        imgSrc:
+          'https://assets.funraise.io/widget/client/e903bf1c-1df2-4a95-a37c-61a636c7e863/3237/1.3/6d6d61bd3be7522da5756fdcad35e539d378d890.png'
+      },
+      content: `Action Against Hunger has published a new project: <b>MEDIOS DE VIDA NÍGER.</b> <a>@ACHNiger</a>. <a href="#">#comgo</a>
+          <a href="#">#FundacionCajaNavarra</a>`,
+      timestamp: '19:50',
+      location: 'Níger',
+      deadline: '30',
+      backers: '0',
+      goal: '80k',
+      goalNum: 80000,
+      covered: '49K',
+      coveredNum: 49000,
+      left: '31k',
+      imgSrc:
+        'https://www.accioncontraelhambre.org/sites/default/files/styles/story_image/public/images/stories/cabecera_SA.jpg?itok=Z-GTQqUm'
+    },
+    {
+      id: 3,
       type: 'NEWS',
       poster: {
         name: 'Comunidad de Madrid',
@@ -28,7 +52,42 @@ export default {
       imgSrc: 'https://comgo.io/_nuxt/img/school.6a9b6d6.png'
     },
     {
-      id: 3,
+      id: 4,
+      type: 'PRODUCT',
+      poster: {
+        name: 'Ecoalf',
+        info: 'Moda sostenible',
+        imgSrc: 'https://ecoalf.com/img/ecoalf-logo-1562319524.jpg'
+      },
+      content: `More than 10 million hectares of Australian land have been burned. Our planet is burning, we care and we want to help. ECOALF will donate 5% of its online sales for the reforestation and restoration.</a>`,
+      timestamp: '18:33',
+      product: 'Winter Coat Black',
+      price: '59.95',
+      unit: '€',
+      imgSrc:
+        'https://test.comgo.io/img/project/Project1581104090471/151538fotoecoalf3.jpg'
+    },
+    {
+      id: 5,
+      type: 'PRODUCT',
+      poster: {
+        name: 'AUARA',
+        info: 'Water to change the world',
+        imgSrc:
+          'https://cdn.shopify.com/s/files/1/0058/6498/0591/files/AUARA_PS_WEB_HOME_PRODUCTO_2020_2_600x.jpg?v=1580988796'
+      },
+      content: `1 out of 10 people do not have access to clean water. Once our founders saw that we founded a social entrepreneurship that donates 100% of the benefits to projects that ensure the most underprivileged people have access to clean water. <a>@Comgo</a>. <a href="#">#watertochangetheworld</a>
+        <a href="#">#FundacionCajaNavarra</a>`,
+      timestamp: '19:50',
+      location: 'Spain',
+      product: '6x Water Bottle Pack',
+      price: '3.49',
+      unit: '€',
+      imgSrc:
+        'https://test.comgo.io/img/project/Project1581100531630/108556AUARA_PS_WEB_NOSOTROS_FOTO_descargas_600x.jpg'
+    },
+    {
+      id: 6,
       type: 'EVENT',
       poster: {
         name: 'Comgo',
@@ -43,32 +102,7 @@ export default {
         'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'
     },
     {
-      id: 4,
-      type: 'PROJECT',
-      projectId: 'Project1565778624959',
-      poster: {
-        name: 'ACH',
-        info: 'Action Against Hunger Spain',
-        imgSrc:
-          'https://assets.funraise.io/widget/client/e903bf1c-1df2-4a95-a37c-61a636c7e863/3237/1.3/6d6d61bd3be7522da5756fdcad35e539d378d890.png'
-      },
-      content: `Action Against Hunger has published a new project: Sam photo: fighting against malnutrition with a click. <a>@ACHSenegal</a>. <a href="#">#comgo</a>
-        <a href="#">#SAMPhoto</a>`,
-      timestamp: '19:50',
-      location: 'Senegal',
-      deadline: '30',
-      backers: '0',
-      goal: '15k',
-      goalNum: 15000,
-      covered: '0',
-      coveredNum: 0,
-      left: '15k',
-      imgSrc:
-        'https://www.accioncontraelhambre.org/sites/default/files/styles/highlight/public/images/highlights/destacado_nueva_marca_oct2016.jpg?itok=N9UPHc9j'
-    },
-    {
-      id: 4,
-      projectId: 'Project1565778624959',
+      id: 8,
       type: 'UPDATE',
       poster: {
         name: 'Cáritas',
