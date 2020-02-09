@@ -1,5 +1,5 @@
 <template>
-  <div class="card" data-aos="fade-up">
+  <div class="card">
     <header class="card-header">
       <div class="header-content">
         <div class="poster-details">

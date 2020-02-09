@@ -1,5 +1,34 @@
 <template>
   <div class="column is-6">
+    <div v-if="items.length" class="container is-hidden-mobile">
+      <div v-for="(data, index) in items" :key="index">
+        <news-card
+          v-if="data.type == 'NEWS'"
+          data-aos="fade-up"
+          :data="data"
+        ></news-card>
+        <event-card
+          v-if="data.type == 'EVENT'"
+          data-aos="fade-up"
+          :data="data"
+        ></event-card>
+        <project-card
+          v-if="data.type == 'PROJECT'"
+          data-aos="fade-up"
+          :data="data"
+        ></project-card>
+        <update-card
+          v-if="data.type == 'UPDATE'"
+          data-aos="fade-up"
+          :data="data"
+        ></update-card>
+        <product-card
+          v-if="data.type == 'PRODUCT'"
+          data-aos="fade-up"
+          :data="data"
+        ></product-card>
+      </div>
+    </div>
     <div v-if="items.length" class="container">
       <div v-for="(data, index) in items" :key="index">
         <news-card v-if="data.type == 'NEWS'" :data="data"></news-card>
