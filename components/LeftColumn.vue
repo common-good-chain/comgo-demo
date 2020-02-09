@@ -25,8 +25,6 @@
 </style>
 
 <script>
-import _ from 'lodash'
-import { isMobile } from 'mobile-device-detect'
 import UserCard from '~/components/UserCard'
 import SocialScore from '~/components/SocialScore'
 import UserMenu from '~/components/UserMenu'
@@ -36,35 +34,6 @@ export default {
     UserCard,
     SocialScore,
     UserMenu
-  },
-  props: ['allCategories', 'selectedCategory'],
-  computed: {
-    isMobileDetected() {
-      return isMobile
-    },
-    parentCategory() {
-      return this.selectedCategory.parentCategory
-    },
-    relatedCategories() {
-      let data
-      const selectedCategory = this.selectedCategory
-      if (this.parentCategory) {
-        data = _.filter(this.allCategories, {
-          parentCategory: { id: this.parentCategory.id }
-        })
-        _.remove(data, function(category) {
-          return category.id === selectedCategory.id
-        })
-      } else {
-        data = _.filter(this.allCategories, {
-          parentCategory: { id: selectedCategory.id }
-        })
-      }
-      return data
-    },
-    parentCategories() {
-      return _.filter(this.allCategories, { parentCategory: null })
-    }
   }
 }
 </script>

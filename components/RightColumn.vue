@@ -8,7 +8,10 @@
       </div> -->
       <div class="container">
         <!-- <user-card></user-card> -->
-        <filters-menu @filters-change="onChange"></filters-menu>
+        <filters-menu
+          class="is-hidden-mobile"
+          @filters-change="onChange"
+        ></filters-menu>
         <recommendations></recommendations>
         <events></events>
         <div class="container">

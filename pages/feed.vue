@@ -8,7 +8,7 @@
         <b-loading :is-full-page="true" :active.sync="loading"></b-loading>
         <div v-if="loading" class="columns" style="height: 70vh;"></div>
         <div v-else class="columns">
-          <left-column></left-column>
+          <left-column class="is-hidden-mobile"></left-column>
           <feed-items :items="filteredItems"></feed-items>
           <right-column @filters-change="onChangeFilters"></right-column>
         </div>

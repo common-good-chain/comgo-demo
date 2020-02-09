@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-hidden-mobile">
+  <nav class="navbar">
     <div class="container nav-content">
       <div class="nav-brand">
         <a href="/feed">
@@ -10,7 +10,10 @@
         </div>
       </div>
       <div>
-        <div style="display: flex; align-items: center; padding-left: 10px">
+        <div
+          class="is-hidden-mobile"
+          style="display: flex; align-items: center; padding-left: 10px"
+        >
           <talent-search :all-talents="data"></talent-search>
         </div>
       </div>
