@@ -73,10 +73,7 @@
           type="is-primary"
           tag="a"
           target="_blank"
-          :href="
-            'https://test.comgo.io/pages/projectProfile?projectId=' +
-              data.projectId
-          "
+          :href="'https://test.comgo.io/pages/ldg?projectId=' + data.projectId"
         >
           🤲 Donate
         </b-button>
