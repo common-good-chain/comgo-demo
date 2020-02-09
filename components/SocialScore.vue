@@ -4,7 +4,7 @@
       <div class="card-content">
         <div class="media-content" style="margin-bottom: 1rem;">
           <span class="subtitle is-5 has-text-weight-semibold"
-            >Social score</span
+            >Your Social Impact</span
           >
         </div>
         <div class="media" style="align-items: center;">
