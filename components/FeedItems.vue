@@ -29,7 +29,7 @@
         ></product-card>
       </div>
     </div>
-    <div v-if="items.length" class="container">
+    <div v-if="items.length" class="container is-hidden-desktop">
       <div v-for="(data, index) in items" :key="index">
         <news-card v-if="data.type == 'NEWS'" :data="data"></news-card>
         <event-card v-if="data.type == 'EVENT'" :data="data"></event-card>
