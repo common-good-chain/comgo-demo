@@ -38,6 +38,12 @@
   </div>
 </template>
 
+<style scoped>
+::-webkit-scrollbar {
+  display: none;
+}
+</style>
+
 <script>
 export default {
   data() {

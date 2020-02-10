@@ -38,6 +38,9 @@
 </template>
 
 <style scoped>
+::-webkit-scrollbar {
+  display: none;
+}
 .card {
   /*max-width: 260px;*/
   display: flex;
