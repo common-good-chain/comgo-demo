@@ -35,8 +35,6 @@ export default {
   plugins: [
     { src: '~/plugins/lodash', ssr: false },
     { src: '~/plugins/aos', ssr: false },
-    { src: '~/plugins/vue-typer', ssr: false },
-    { src: '~plugins/vue-video-player', ssr: false },
     { src: '~plugins/charts', ssr: false }
   ],
   /*
